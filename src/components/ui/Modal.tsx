@@ -107,7 +107,7 @@ export function Modal({
         tabIndex={-1}
       >
         {(title || showCloseButton) && (
-          <div className="flex items-start justify-between p-6 border-b border-black/5">
+          <div className="flex items-start justify-between p-6 border-b border-ink-200">
             <div>
               {title && (
                 <h2 id="modal-title" className="font-display text-xl font-semibold text-dark-900">

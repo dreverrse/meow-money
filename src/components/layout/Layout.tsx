@@ -8,7 +8,7 @@ export function Layout() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#f2f2f7]">
+    <div className="min-h-screen paper-grid bg-ink-50">
       {/* Sidebar (desktop only) */}
       <Sidebar
         isCollapsed={isSidebarCollapsed}

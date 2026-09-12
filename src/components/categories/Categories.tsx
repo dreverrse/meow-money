@@ -17,8 +17,8 @@ const typeOptions = [
 const iconOptions = ['🍔', '🚌', '🛍️', '🎮', '🏥', '📚', '📄', '✈️', '👤', '📦', '💰', '💻', '📈', '🎁', '💵', '🏠', '🚗', '📱', '🎓', '💊', '🐾', '🎨', '🎵', '📷', '⚽', '🎬', '🛒', '💳', '🏦', '💎', '🪙'];
 
 const colorOptions = [
-  '#ef4444', '#f97316', '#f59e0b', '#eab308', '#84cc16', '#22c55e', '#10b981', '#14b8a6', '#06b6d4', '#0ea5e9',
-  '#3b82f6', '#6366f1', '#8b5cf6', '#a855f7', '#d946ef', '#ec4899', '#f43f5e', '#78716c', '#64748b', '#0f172a',
+  '#D1931E', '#B34F3E', '#4F8250', '#DFA832', '#9A4032', '#70996B', '#A79C85', '#B37518', '#C56E5A', '#3D6841',
+  '#E8BE5C', '#8F5F13', '#857A65', '#325535', '#7E352A', '#645B4A', '#CBC1AC', '#6E4914', '#2A442C', '#38332A',
 ];
 
 export function Categories() {
@@ -34,7 +34,7 @@ export function Categories() {
   const [formData, setFormData] = useState({
     name: '',
     icon: '📦',
-    color: '#64748b',
+    color: '#A79C85',
     type: 'expense' as 'income' | 'expense',
   });
   const [formErrors, setFormErrors] = useState<Record<string, string>>({});
@@ -52,7 +52,7 @@ export function Categories() {
     setFormData({
       name: '',
       icon: '📦',
-      color: '#64748b',
+      color: '#A79C85',
       type: 'expense',
     });
     setFormErrors({});

@@ -10,7 +10,7 @@ import { useApp } from '../../context/AppContext';
 import { SavingsGoal } from '../../data/types';
 
 const iconOptions = ['🏠', '🚗', '✈️', '💻', '📱', '🎓', '💍', '👶', '🏖️', '🎮', '📷', '🎸', '🐕', '🐈', '🏥', '💰', '💎', '🎁', '🏦', '📈', '🪙', '🏆', '🎨', '📚'];
-const colorOptions = ['#0071e3', '#22c55e', '#a855f7', '#f97316', '#ec4899', '#06b6d4', '#84cc16', '#6366f1', '#f43f5e', '#14b8a6', '#f59e0b', '#d946ef'];
+const colorOptions = ['#D1931E', '#B34F3E', '#4F8250', '#DFA832', '#9A4032', '#70996B', '#A79C85', '#B37518', '#C56E5A', '#3D6841', '#E8BE5C', '#857A65'];
 
 export function Savings() {
   const { state, addSavingsGoal, updateSavingsGoal, deleteSavingsGoal, updateSavingsProgress } = useApp();
@@ -28,7 +28,7 @@ export function Savings() {
     currentAmount: 0,
     targetDate: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
     icon: '🎯',
-    color: '#0071e3',
+    color: '#D1931E',
   });
   const [formErrors, setFormErrors] = useState<Record<string, string>>({});
 
@@ -46,7 +46,7 @@ export function Savings() {
       currentAmount: 0,
       targetDate: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
       icon: '🎯',
-      color: '#0071e3',
+      color: '#D1931E',
     });
     setFormErrors({});
     setEditingGoal(null);
@@ -155,7 +155,7 @@ export function Savings() {
         <CardContent className="p-6">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
             <div className="flex items-center gap-4">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary-500 to-blue-400 flex items-center justify-center">
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary-500 to-primary-400 flex items-center justify-center">
                 <Target className="w-8 h-8 text-white" />
               </div>
               <div>
@@ -316,7 +316,7 @@ export function Savings() {
 
           <div>
             <label className="label">Ikon</label>
-            <div className="grid grid-cols-10 gap-2 max-h-40 overflow-y-auto p-2 bg-black/[0.04] rounded-2xl">
+            <div className="grid grid-cols-10 gap-2 max-h-40 overflow-y-auto p-2 bg-ink-100 rounded-2xl">
               {iconOptions.map((icon) => (
                 <button
                   key={icon}
@@ -324,9 +324,9 @@ export function Savings() {
                   onClick={() => setFormData(prev => ({ ...prev, icon }))}
                   className={`w-10 h-10 rounded-xl flex items-center justify-center text-xl transition-all ${
                     formData.icon === icon
-                      ? 'ring-2 ring-primary-500 bg-white shadow-soft'
-                      : 'hover:bg-black/[0.05]'
-                  }`}
+? 'ring-2 ring-primary-500 bg-white shadow-soft'
+                      : 'hover:bg-ink-100'
+                    }`}
                 >
                   {icon}
                 </button>
@@ -350,7 +350,7 @@ export function Savings() {
             </div>
           </div>
 
-            <div className="flex justify-end gap-3 pt-4 border-t border-black/5">
+<div className="flex justify-end gap-3 pt-4 border-t border-ink-200">
             <Button type="button" variant="secondary" onClick={resetForm}>
               Batal
             </Button>
@@ -382,7 +382,7 @@ export function Savings() {
               leftIcon={<span className="text-dark-400">{preferences.currency === 'IDR' ? 'Rp' : '$'}</span>}
               autoFocus
             />
-          <div className="flex justify-end gap-3 pt-4 border-t border-black/5">
+          <div className="flex justify-end gap-3 pt-4 border-t border-ink-200">
               <Button variant="secondary" onClick={() => { setAddingToGoalId(null); setAddAmount(''); }}>
                 Batal
               </Button>
@@ -480,7 +480,7 @@ function SavingsGoalCard({ goal, onEdit, onDelete, onAddProgress, isCompleted = 
 
         <Progress value={goal.currentAmount} max={goal.targetAmount} variant="savings" size="md" showLabel label={`${percentage.toFixed(0)}% Tercapai`} className="mb-4" />
 
-        <div className="grid grid-cols-3 gap-4 mb-4 p-4 bg-black/[0.04] rounded-2xl">
+        <div className="grid grid-cols-3 gap-4 mb-4 p-4 bg-ink-100 rounded-2xl">
           <div className="text-center">
             <p className="text-xs text-dark-500">Tersimpan</p>
             <p className="font-bold text-dark-900">{formatCurrency(goal.currentAmount, state.preferences.currency)}</p>

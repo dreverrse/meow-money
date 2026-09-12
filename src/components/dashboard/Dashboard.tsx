@@ -24,7 +24,7 @@ function StatCard({ title, value, change, changeLabel, icon, iconColor, bgColor,
       <div className="flex items-start justify-between">
         <div>
           <p className="text-sm font-medium text-dark-500">{title}</p>
-          <p className="mt-1 font-display text-3xl font-bold tracking-tight text-dark-900">{value}</p>
+          <p className="mt-1 font-display text-3xl font-bold tracking-tight text-dark-900 amount">{value}</p>
           {change !== undefined && (
             <div className="mt-2 flex items-center gap-1">
               {trend === 'up' && <TrendingUp className="w-4 h-4 text-green-500" />}
@@ -287,11 +287,11 @@ export function RecentTransactions({ limit = 5 }: RecentTransactionsProps) {
         </div>
       </CardHeader>
       <CardContent className="p-0">
-        <div className="divide-y divide-black/5">
+        <div className="divide-y divide-ink-200">
           {recentTransactions.map((transaction, index) => (
             <div
               key={transaction.id}
-              className={`flex items-center gap-4 p-4 hover:bg-black/[0.03] transition-colors animate-slide-up ${index === recentTransactions.length - 1 ? 'border-b-0' : ''}`}
+              className={`flex items-center gap-4 p-4 hover:bg-ink-100 transition-colors animate-slide-up ${index === recentTransactions.length - 1 ? 'border-b-0' : ''}`}
               style={{ animationDelay: `${index * 50}ms` }}
             >
               <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-lg ${transaction.type === 'income' ? 'bg-secondary-100' : 'bg-red-100'}`}>
@@ -302,7 +302,7 @@ export function RecentTransactions({ limit = 5 }: RecentTransactionsProps) {
                 <p className="text-sm text-dark-500">{transaction.categoryName} &#8226; {formatDate(transaction.date, state.preferences.dateFormat)}</p>
               </div>
               <div className="text-right">
-                <p className={`font-semibold ${transaction.type === 'income' ? 'text-secondary-600' : 'text-red-600'}`}>
+                <p className={`font-semibold amount ${transaction.type === 'income' ? 'text-secondary-600' : 'text-red-600'}`}>
                   {transaction.type === 'income' ? '+' : '-'}{formatCurrency(transaction.amount, state.preferences.currency)}
                 </p>
                 <Badge variant={transaction.type === 'income' ? 'income' : 'expense'} size="sm">

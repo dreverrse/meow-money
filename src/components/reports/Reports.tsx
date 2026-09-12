@@ -22,7 +22,7 @@ const chartTypeOptions = [
 ];
 
 // Simple SVG Chart Components
-function BarChart({ data, maxValue, height = 200, color = '#0071e3' }: { data: Array<{ label: string; value: number }>; maxValue: number; height?: number; color?: string }) {
+function BarChart({ data, maxValue, height = 200, color = '#D1931E' }: { data: Array<{ label: string; value: number }>; maxValue: number; height?: number; color?: string }) {
   const barWidth = 100 / data.length;
   return (
     <div className="w-full h-64 flex items-end justify-around px-2" role="img" aria-label="Bar chart">
@@ -47,7 +47,7 @@ function BarChart({ data, maxValue, height = 200, color = '#0071e3' }: { data: A
   );
 }
 
-function PieChartComponent({ data, colors = ['#0071e3', '#22c55e', '#a855f7', '#f97316', '#ec4899', '#06b6d4', '#84cc16', '#64748b'] }: { data: Array<{ label: string; value: number; color?: string }> }) {
+function PieChartComponent({ data, colors = ['#D1931E', '#B34F3E', '#4F8250', '#DFA832', '#9A4032', '#70996B', '#A79C85', '#B37518'] }: { data: Array<{ label: string; value: number; color?: string }> }) {
   const total = data.reduce((sum, item) => sum + item.value, 0);
   if (total === 0) return <div className="w-full h-64 flex items-center justify-center text-dark-400">Tidak ada data</div>;
   
@@ -94,7 +94,7 @@ function PieChartComponent({ data, colors = ['#0071e3', '#22c55e', '#a855f7', '#
   );
 }
 
-function LineChart({ data, maxValue, height = 200, color = '#0071e3' }: { data: Array<{ label: string; value: number }>; maxValue: number; height?: number; color?: string }) {
+function LineChart({ data, maxValue, height = 200, color = '#D1931E' }: { data: Array<{ label: string; value: number }>; maxValue: number; height?: number; color?: string }) {
   if (data.length === 0) return <div className="w-full h-64 flex items-center justify-center text-dark-400">Tidak ada data</div>;
   
   const points = data.map((item, index) => {
@@ -294,7 +294,7 @@ export function Reports() {
             
             <div className="flex items-center gap-2">
               <span className="text-sm text-dark-500 hidden sm:block">Tipe Chart:</span>
-              <div className="flex bg-black/[0.05] rounded-full p-1">
+              <div className="flex bg-ink-100 rounded-lg p-1">
                 {chartTypeOptions.map(({ value, icon: Icon }) => (
                   <button
                     key={value}
@@ -321,7 +321,7 @@ export function Reports() {
             </div>
             <div>
               <p className="text-sm text-dark-500">Total Pemasukan</p>
-              <p className="font-display text-2xl font-bold text-secondary-600">{formatCurrency(totalIncome, preferences.currency)}</p>
+              <p className="font-display text-2xl font-bold amount text-secondary-600">{formatCurrency(totalIncome, preferences.currency)}</p>
             </div>
           </div>
         </Card>
@@ -332,7 +332,7 @@ export function Reports() {
             </div>
             <div>
               <p className="text-sm text-dark-500">Total Pengeluaran</p>
-              <p className="font-display text-2xl font-bold text-red-600">{formatCurrency(totalExpense, preferences.currency)}</p>
+              <p className="font-display text-2xl font-bold amount text-red-600">{formatCurrency(totalExpense, preferences.currency)}</p>
             </div>
           </div>
         </Card>
@@ -343,7 +343,7 @@ export function Reports() {
             </div>
             <div>
               <p className="text-sm text-dark-500">Saldo Bersih</p>
-              <p className={`font-display text-2xl font-bold ${balance >= 0 ? 'text-secondary-600' : 'text-red-600'}`}>
+              <p className={`font-display text-2xl font-bold amount ${balance >= 0 ? 'text-secondary-600' : 'text-red-600'}`}>
                 {balance >= 0 ? '+' : ''}{formatCurrency(balance, preferences.currency)}
               </p>
             </div>
@@ -366,8 +366,8 @@ export function Reports() {
               </div>
             ) : (
               <div className="h-64">
-                {chartType === 'bar' && <BarChart data={expenseChartData} maxValue={maxCategoryValue} color="#ef4444" />}
-                {chartType === 'line' && <LineChart data={expenseChartData} maxValue={maxCategoryValue} color="#ef4444" />}
+                {chartType === 'bar' && <BarChart data={expenseChartData} maxValue={maxCategoryValue} color="#B34F3E" />}
+                {chartType === 'line' && <LineChart data={expenseChartData} maxValue={maxCategoryValue} color="#B34F3E" />}
                 {chartType === 'pie' && <PieChartComponent data={expenseChartData} />}
               </div>
             )}
@@ -387,8 +387,8 @@ export function Reports() {
               </div>
             ) : (
               <div className="h-64">
-                {chartType === 'bar' && <BarChart data={incomeChartData} maxValue={maxCategoryValue} color="#22c55e" />}
-                {chartType === 'line' && <LineChart data={incomeChartData} maxValue={maxCategoryValue} color="#22c55e" />}
+                {chartType === 'bar' && <BarChart data={incomeChartData} maxValue={maxCategoryValue} color="#4F8250" />}
+                {chartType === 'line' && <LineChart data={incomeChartData} maxValue={maxCategoryValue} color="#4F8250" />}
                 {chartType === 'pie' && <PieChartComponent data={incomeChartData} />}
               </div>
             )}
@@ -404,10 +404,10 @@ export function Reports() {
         <CardContent>
           <div className="h-64">
             {chartType === 'bar' && (
-              <BarChart data={dailyData.map(d => ({ label: d.label, value: d.expense }))} maxValue={maxDailyValue} color="#ef4444" />
+              <BarChart data={dailyData.map(d => ({ label: d.label, value: d.expense }))} maxValue={maxDailyValue} color="#B34F3E" />
             )}
             {chartType === 'line' && (
-              <LineChart data={dailyData.map(d => ({ label: d.label, value: d.expense }))} maxValue={maxDailyValue} color="#ef4444" />
+              <LineChart data={dailyData.map(d => ({ label: d.label, value: d.expense }))} maxValue={maxDailyValue} color="#B34F3E" />
             )}
             {chartType === 'pie' && (
               <div className="text-center text-dark-500 py-8">Pie chart tidak tersedia untuk data harian</div>
@@ -429,11 +429,11 @@ export function Reports() {
                 <p className="empty-state-title">Tidak ada data</p>
               </div>
             ) : (
-              <div className="divide-y divide-black/5">
+              <div className="divide-y divide-ink-200">
                 {expenseChartData.map((item, index) => {
                   const percentage = totalExpense > 0 ? (item.value / totalExpense) * 100 : 0;
                   return (
-                    <div key={index} className="flex items-center justify-between p-4 hover:bg-black/[0.03]">
+                    <div key={index} className="flex items-center justify-between p-4 hover:bg-ink-100">
                       <div className="flex items-center gap-3">
                         <div className="w-8 h-8 rounded-lg flex items-center justify-center text-lg" style={{ backgroundColor: `${item.color}20` }}>
                           <span style={{ color: item.color }}>●</span>
@@ -441,7 +441,7 @@ export function Reports() {
                         <span className="font-medium text-dark-900">{item.label}</span>
                       </div>
                       <div className="text-right">
-                        <p className="font-semibold text-red-600">{formatCurrency(item.value, preferences.currency)}</p>
+                        <p className="font-semibold amount text-red-600">{formatCurrency(item.value, preferences.currency)}</p>
                         <p className="text-sm text-dark-500">{percentage.toFixed(1)}%</p>
                       </div>
                     </div>
@@ -463,11 +463,11 @@ export function Reports() {
                 <p className="empty-state-title">Tidak ada data</p>
               </div>
             ) : (
-              <div className="divide-y divide-black/5">
+              <div className="divide-y divide-ink-200">
                 {incomeChartData.map((item, index) => {
                   const percentage = totalIncome > 0 ? (item.value / totalIncome) * 100 : 0;
                   return (
-                    <div key={index} className="flex items-center justify-between p-4 hover:bg-black/[0.03]">
+                    <div key={index} className="flex items-center justify-between p-4 hover:bg-ink-100">
                       <div className="flex items-center gap-3">
                         <div className="w-8 h-8 rounded-lg flex items-center justify-center text-lg" style={{ backgroundColor: `${item.color}20` }}>
                           <span style={{ color: item.color }}>●</span>
@@ -475,7 +475,7 @@ export function Reports() {
                         <span className="font-medium text-dark-900">{item.label}</span>
                       </div>
                       <div className="text-right">
-                        <p className="font-semibold text-secondary-600">{formatCurrency(item.value, preferences.currency)}</p>
+                        <p className="font-semibold amount text-secondary-600">{formatCurrency(item.value, preferences.currency)}</p>
                         <p className="text-sm text-dark-500">{percentage.toFixed(1)}%</p>
                       </div>
                     </div>

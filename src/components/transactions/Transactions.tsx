@@ -395,7 +395,7 @@ export function Transactions() {
                   <div className="px-6 py-3 bg-dark-50 border-b border-dark-100">
                     <p className="text-sm font-medium text-dark-500">
                       {formatDate(date, preferences.dateFormat)}
-                      <span className="ml-2 px-2 py-0.5 text-xs bg-dark-200 text-dark-600 rounded-full">
+                      <span className="ml-2 px-2 py-0.5 text-xs bg-dark-200 text-dark-600 rounded-md">
                         {transactions.length} transaksi
                       </span>
                     </p>

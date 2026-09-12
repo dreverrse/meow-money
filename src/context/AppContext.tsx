@@ -113,7 +113,7 @@ function appReducer(state: AppState, action: Action): AppState {
         categories: state.categories.filter(c => c.id !== action.payload),
         transactions: state.transactions.map(t =>
           t.categoryId === action.payload
-            ? { ...t, categoryId: 'others-expense', categoryName: 'Lainnya', categoryIcon: '📦', categoryColor: '#94a3b8' }
+            ? { ...t, categoryId: 'others-expense', categoryName: 'Lainnya', categoryIcon: '📦', categoryColor: '#A79C85' }
             : t
         ),
       };

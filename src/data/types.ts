@@ -81,30 +81,30 @@ export interface AppState {
 // Default categories
 export const DEFAULT_CATEGORIES: Category[] = [
   // Expense categories
-  { id: 'food', name: 'Makanan & Minuman', icon: '🍔', color: '#ef4444', type: 'expense', isDefault: true },
-  { id: 'transport', name: 'Transportasi', icon: '🚌', color: '#f97316', type: 'expense', isDefault: true },
-  { id: 'shopping', name: 'Belanja', icon: '🛍️', color: '#ec4899', type: 'expense', isDefault: true },
-  { id: 'entertainment', name: 'Hiburan', icon: '🎮', color: '#8b5cf6', type: 'expense', isDefault: true },
-  { id: 'health', name: 'Kesehatan', icon: '🏥', color: '#06b6d4', type: 'expense', isDefault: true },
-  { id: 'education', name: 'Pendidikan', icon: '📚', color: '#84cc16', type: 'expense', isDefault: true },
-  { id: 'bills', name: 'Tagihan & Bayar', icon: '📄', color: '#64748b', type: 'expense', isDefault: true },
-  { id: 'travel', name: 'Perjalanan', icon: '✈️', color: '#f59e0b', type: 'expense', isDefault: true },
-  { id: 'personal', name: 'Pribadi', icon: '👤', color: '#14b8a6', type: 'expense', isDefault: true },
-  { id: 'others-expense', name: 'Lainnya', icon: '📦', color: '#94a3b8', type: 'expense', isDefault: true },
+  { id: 'food', name: 'Makanan & Minuman', icon: '🍔', color: '#B34F3E', type: 'expense', isDefault: true },
+  { id: 'transport', name: 'Transportasi', icon: '🚌', color: '#D1931E', type: 'expense', isDefault: true },
+  { id: 'shopping', name: 'Belanja', icon: '🛍️', color: '#C56E5A', type: 'expense', isDefault: true },
+  { id: 'entertainment', name: 'Hiburan', icon: '🎮', color: '#B37518', type: 'expense', isDefault: true },
+  { id: 'health', name: 'Kesehatan', icon: '🏥', color: '#4F8250', type: 'expense', isDefault: true },
+  { id: 'education', name: 'Pendidikan', icon: '📚', color: '#70996B', type: 'expense', isDefault: true },
+  { id: 'bills', name: 'Tagihan & Bayar', icon: '📄', color: '#857A65', type: 'expense', isDefault: true },
+  { id: 'travel', name: 'Perjalanan', icon: '✈️', color: '#DFA832', type: 'expense', isDefault: true },
+  { id: 'personal', name: 'Pribadi', icon: '👤', color: '#3D6841', type: 'expense', isDefault: true },
+  { id: 'others-expense', name: 'Lainnya', icon: '📦', color: '#A79C85', type: 'expense', isDefault: true },
   
   // Income categories
-  { id: 'salary', name: 'Gaji', icon: '💰', color: '#22c55e', type: 'income', isDefault: true },
-  { id: 'freelance', name: 'Freelance', icon: '💻', color: '#16a34a', type: 'income', isDefault: true },
-  { id: 'investment', name: 'Investasi', icon: '📈', color: '#15803d', type: 'income', isDefault: true },
-  { id: 'gift', name: 'Hadiah', icon: '🎁', color: '#166534', type: 'income', isDefault: true },
-  { id: 'others-income', name: 'Lainnya', icon: '💵', color: '#14532d', type: 'income', isDefault: true },
+  { id: 'salary', name: 'Gaji', icon: '💰', color: '#4F8250', type: 'income', isDefault: true },
+  { id: 'freelance', name: 'Freelance', icon: '💻', color: '#3D6841', type: 'income', isDefault: true },
+  { id: 'investment', name: 'Investasi', icon: '📈', color: '#325535', type: 'income', isDefault: true },
+  { id: 'gift', name: 'Hadiah', icon: '🎁', color: '#B37518', type: 'income', isDefault: true },
+  { id: 'others-income', name: 'Lainnya', icon: '💵', color: '#857A65', type: 'income', isDefault: true },
 ];
 
 // Default accounts
 export const DEFAULT_ACCOUNTS: Account[] = [
-  { id: 'cash', name: 'Tunai', type: 'cash', balance: 0, currency: 'IDR', icon: '💵', color: '#22c55e', isDefault: true },
-  { id: 'bank', name: 'Bank Utama', type: 'bank', balance: 0, currency: 'IDR', icon: '🏦', color: '#3b82f6', isDefault: false },
-  { id: 'ewallet', name: 'E-Wallet', type: 'ewallet', balance: 0, currency: 'IDR', icon: '📱', color: '#8b5cf6', isDefault: false },
+  { id: 'cash', name: 'Tunai', type: 'cash', balance: 0, currency: 'IDR', icon: '💵', color: '#4F8250', isDefault: true },
+  { id: 'bank', name: 'Bank Utama', type: 'bank', balance: 0, currency: 'IDR', icon: '🏦', color: '#D1931E', isDefault: false },
+  { id: 'ewallet', name: 'E-Wallet', type: 'ewallet', balance: 0, currency: 'IDR', icon: '📱', color: '#B37518', isDefault: false },
 ];
 
 // Currency formatting

@@ -24,7 +24,7 @@ export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
       expense: 'bg-red-100 text-red-700',
       savings: 'bg-accent-100 text-accent-700',
       warning: 'bg-amber-100 text-amber-700',
-      info: 'bg-blue-100 text-blue-700',
+      info: 'bg-primary-100 text-primary-700',
       success: 'bg-green-100 text-green-700',
     };
     
@@ -40,7 +40,7 @@ export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
       expense: 'bg-red-500',
       savings: 'bg-accent-500',
       warning: 'bg-amber-500',
-      info: 'bg-blue-500',
+      info: 'bg-primary-500',
       success: 'bg-green-500',
     };
     
@@ -48,7 +48,7 @@ export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
       <span
         ref={ref}
         className={`
-          inline-flex items-center gap-1.5 font-medium rounded-full
+          inline-flex items-center gap-1.5 font-medium rounded-md
           ${variantClasses[variant]} ${sizeClasses[size]} ${className}
         `}
         {...props}
@@ -97,7 +97,7 @@ export const Avatar = forwardRef<HTMLDivElement, AvatarProps>(
     
     const shapeClasses = {
       circle: 'rounded-full',
-      square: 'rounded-xl',
+      square: 'rounded-lg',
     };
     
     const statusSizeClasses = {
@@ -137,14 +137,14 @@ export const Avatar = forwardRef<HTMLDivElement, AvatarProps>(
       const colors = [
         'bg-primary-500',
         'bg-secondary-500',
-        'bg-accent-500',
+        'bg-red-500',
         'bg-amber-500',
-        'bg-blue-500',
-        'bg-blue-600',
-        'bg-pink-500',
-        'bg-teal-500',
+        'bg-primary-600',
+        'bg-secondary-400',
+        'bg-red-400',
+        'bg-dark-500',
         'bg-primary-400',
-        'bg-indigo-500',
+        'bg-secondary-600',
       ];
       let hash = 0;
       for (let i = 0; i < name.length; i++) {

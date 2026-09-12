@@ -55,7 +55,7 @@ export function Header() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-40 bg-white/70 backdrop-blur-2xl border-b border-black/5">
+    <header className="sticky top-0 z-40 bg-white border-b border-ink-200">
       <div className="container">
         <div className="flex items-center justify-between h-16">
           {/* Logo & Mobile Menu */}
@@ -69,7 +69,7 @@ export function Header() {
             </button>
             
             <div className="flex items-center gap-2">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary-500 to-blue-400 flex items-center justify-center">
+              <div className="w-9 h-9 rounded-lg bg-primary-500 shadow-card flex items-center justify-center">
                 <span className="text-white font-display font-bold text-lg">M</span>
               </div>
               <span className="font-display font-bold text-xl text-dark-900 hidden sm:block">MeowMoney</span>
@@ -85,7 +85,7 @@ export function Header() {
               <input
                 type="text"
                 placeholder="Cari transaksi, kategori..."
-                className="input pl-10 py-2.5 bg-black/[0.04] border-transparent focus:bg-white"
+                className="input pl-10 py-2.5 bg-ink-100 border-transparent focus:bg-white"
               />
             </div>
           </div>
@@ -93,15 +93,15 @@ export function Header() {
           {/* Right Actions */}
           <div className="flex items-center gap-2">
             {/* Theme Toggle */}
-            <div className="hidden sm:flex items-center gap-1 bg-black/[0.05] rounded-full p-1">
+            <div className="hidden sm:flex items-center gap-1 bg-white border border-ink-200 rounded-lg p-1 shadow-card">
               {(['light', 'dark', 'system'] as const).map((t) => (
                 <button
                   key={t}
                   onClick={() => handleThemeChange(t)}
-                  className={`p-2 rounded-full transition-all duration-200 ${
+                  className={`p-2 rounded-md transition-all duration-200 ${
                     theme === t
-                      ? 'bg-white shadow-card text-primary-500'
-                      : 'text-dark-500 hover:text-dark-700'
+                      ? 'bg-primary-100 text-primary-700'
+                      : 'text-dark-500 hover:text-dark-700 hover:bg-ink-100'
                   }`}
                   aria-label={`Tema ${t}`}
                   aria-pressed={theme === t}
@@ -123,7 +123,7 @@ export function Header() {
             <div ref={profileRef} className="relative">
               <button
                 onClick={() => setIsProfileOpen(!isProfileOpen)}
-                className="flex items-center gap-2 p-1.5 rounded-xl hover:bg-dark-100 transition-colors"
+                className="flex items-center gap-2 p-1.5 rounded-lg hover:bg-ink-100 transition-colors"
                 aria-label="Menu profil"
                 aria-expanded={isProfileOpen}
                 aria-haspopup="true"
@@ -137,8 +137,8 @@ export function Header() {
               </button>
 
               {isProfileOpen && (
-                <div className="absolute right-0 mt-2 w-56 bg-white rounded-2xl shadow-xl border border-black/5 py-2 animate-scale-in z-50">
-                  <div className="px-4 py-2 border-b border-black/5">
+                <div className="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-card border border-ink-200 py-2 animate-scale-in z-50">
+                  <div className="px-4 py-2 border-b border-ink-200">
                     <p className="font-medium text-dark-900">Pengguna</p>
                     <p className="text-sm text-dark-500">user@meowmoney.com</p>
                   </div>
@@ -152,7 +152,7 @@ export function Header() {
                       <Settings className="w-5 h-5" />
                       Pengaturan
                     </a>
-                    <hr className="my-1 border-black/5" />
+                    <hr className="my-1 border-ink-200" />
                     <button className="flex items-center gap-3 px-4 py-2.5 text-sm text-red-600 hover:bg-red-50 hover:text-red-700 transition-colors w-full text-left">
                       <LogOut className="w-5 h-5" />
                       Keluar
@@ -169,7 +169,7 @@ export function Header() {
       {isMobileMenuOpen && (
         <div className="lg:hidden fixed inset-0 z-50 bg-white">
           <div className="flex flex-col h-full">
-            <div className="p-4 border-b border-black/5 flex items-center justify-between">
+            <div className="p-4 border-b border-ink-200 flex items-center justify-between">
               <h2 className="font-display font-semibold text-dark-900">Menu</h2>
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -189,10 +189,10 @@ export function Header() {
                   to={item.href}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={({ isActive }) => `
-                    flex items-center gap-3 px-4 py-3 rounded-xl transition-colors text-base
+                    flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-base
                     ${isActive
-                      ? 'bg-primary-50 text-primary-700'
-                      : 'text-dark-600 hover:bg-dark-50 hover:text-dark-900'
+                      ? 'bg-primary-100 text-primary-700'
+                      : 'text-dark-600 hover:bg-ink-100 hover:text-dark-900'
                     }
                   `}
                 >
@@ -206,12 +206,12 @@ export function Header() {
               ))}
             </nav>
             
-            <div className="p-4 border-t border-black/5 space-y-2">
-              <button className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-dark-600 hover:bg-dark-50 hover:text-dark-900 transition-colors text-left text-base">
+            <div className="p-4 border-t border-ink-200 space-y-2">
+              <button className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-dark-600 hover:bg-ink-100 hover:text-dark-900 transition-colors text-left text-base">
                 <Moon className="w-5 h-5" />
                 Mode Gelap
               </button>
-              <button className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-red-600 hover:bg-red-50 hover:text-red-700 transition-colors text-left text-base">
+              <button className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-red-600 hover:bg-red-50 hover:text-red-700 transition-colors text-left text-base">
                 <LogOut className="w-5 h-5" />
                 Keluar
               </button>

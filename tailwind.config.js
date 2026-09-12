@@ -8,17 +8,17 @@ export default {
     extend: {
       colors: {
         primary: {
-          50: '#fef7ee',
-          100: '#fdedd6',
-          200: '#fad6ac',
-          300: '#f6b875',
-          400: '#f1913d',
-          500: '#ed7214',
-          600: '#dd570f',
-          700: '#b73e0e',
-          800: '#933112',
-          900: '#762a12',
-          950: '#3f1207',
+          50: '#ebf5ff',
+          100: '#d6eaff',
+          200: '#aed5ff',
+          300: '#7ab8ff',
+          400: '#3a96ff',
+          500: '#0071e3',
+          600: '#005fc4',
+          700: '#0050a5',
+          800: '#004081',
+          900: '#00305f',
+          950: '#001c38',
         },
         secondary: {
           50: '#f0fdf4',
@@ -61,9 +61,9 @@ export default {
         }
       },
       fontFamily: {
-        display: ['Poppins', 'system-ui', 'sans-serif'],
-        body: ['Inter', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        display: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"SF Pro Text"', '"Helvetica Neue"', 'Inter', 'system-ui', 'sans-serif'],
+        body: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Text"', '"Helvetica Neue"', 'Inter', 'system-ui', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', '"SF Mono"', 'SFMono-Regular', 'Menlo', 'monospace'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out',
@@ -101,14 +101,16 @@ export default {
       },
       boxShadow: {
         'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
-        'card': '0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05)',
-        'card-hover': '0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)',
+        'card': '0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 16px rgba(0, 0, 0, 0.06)',
+        'card-hover': '0 2px 4px rgba(0, 0, 0, 0.06), 0 12px 28px rgba(0, 0, 0, 0.1)',
         'inner-soft': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.05)',
       },
       borderRadius: {
         'xl': '1rem',
         '2xl': '1.5rem',
         '3xl': '2rem',
+        'card': '1.25rem',
+        'squircle': '14px',
       },
     },
   },

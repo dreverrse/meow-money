@@ -35,7 +35,7 @@ export function Sidebar({ isCollapsed = false, onToggle }: SidebarProps) {
   return (
     <aside
       className={`
-        fixed lg:static inset-y-0 left-0 z-40 bg-white border-r border-dark-100
+        fixed lg:static inset-y-0 left-0 z-40 bg-white/[0.85] backdrop-blur-2xl border-r border-black/5
         hidden lg:flex
         transition-all duration-300 ease-in-out
         ${isCollapsed ? 'w-20' : 'w-64'}
@@ -44,9 +44,9 @@ export function Sidebar({ isCollapsed = false, onToggle }: SidebarProps) {
       aria-label="Navigasi utama"
     >
       {/* Logo */}
-      <div className="flex items-center justify-between h-16 px-4 border-b border-dark-100">
+      <div className="flex items-center justify-between h-16 px-4 border-b border-black/5">
         <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center flex-shrink-0">
+          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary-500 to-blue-400 flex items-center justify-center flex-shrink-0">
             <span className="text-white font-display font-bold text-lg">M</span>
           </div>
           {!isCollapsed && (
@@ -73,8 +73,8 @@ export function Sidebar({ isCollapsed = false, onToggle }: SidebarProps) {
             className={({ isActive }) => `
               flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200
               ${isActive
-                ? 'bg-primary-50 text-primary-700 shadow-soft'
-                : 'text-dark-600 hover:bg-dark-50 hover:text-dark-900'
+                ? 'bg-primary-50 text-primary-700'
+                : 'text-dark-600 hover:bg-black/[0.04] hover:text-dark-900'
               }
               ${isCollapsed ? 'justify-center' : ''}
             `}
@@ -103,17 +103,17 @@ export function Sidebar({ isCollapsed = false, onToggle }: SidebarProps) {
       </nav>
 
       {/* Bottom Section */}
-      <div className="p-3 border-t border-dark-100">
+      <div className="p-3 border-t border-black/5">
         {!isCollapsed && (
           <div className="space-y-1">
             <a
               href="#"
-              className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-dark-500 hover:bg-dark-50 hover:text-dark-900 transition-colors"
+              className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-dark-500 hover:bg-black/[0.04] hover:text-dark-900 transition-colors"
             >
               <HelpCircle className="w-5 h-5" />
               <span>Bantuan</span>
             </a>
-            <div className="pt-3 mt-3 border-t border-dark-100">
+            <div className="pt-3 mt-3 border-t border-black/5">
               <p className="px-3 text-xs text-dark-400 font-medium">v1.0.0</p>
             </div>
           </div>

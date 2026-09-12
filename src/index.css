@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Poppins:wght@400;500;600;700;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,7 +12,7 @@
   }
   
   body {
-    @apply bg-dark-50 text-dark-900 font-body antialiased;
+    @apply bg-[#f2f2f7] text-dark-900 font-body antialiased;
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
   
@@ -29,7 +27,7 @@
 
 @layer components {
   .btn {
-    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full font-medium text-sm transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
   }
   
   .btn-primary {
@@ -49,11 +47,11 @@
   }
   
   .btn-icon {
-    @apply p-2.5 rounded-xl transition-all duration-200 hover:bg-dark-100 active:bg-dark-200;
+    @apply p-2.5 rounded-full transition-all duration-200 hover:bg-dark-100 active:bg-dark-200;
   }
   
   .input {
-    @apply w-full px-4 py-3 rounded-xl border border-dark-200 bg-white text-dark-900 placeholder-dark-400 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent disabled:bg-dark-50 disabled:cursor-not-allowed;
+    @apply w-full px-4 py-3 rounded-2xl border border-dark-200 bg-white text-dark-900 placeholder-dark-400 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent disabled:bg-dark-50 disabled:cursor-not-allowed;
   }
   
   .input-error {
@@ -65,7 +63,7 @@
   }
   
   .card {
-    @apply bg-white rounded-2xl shadow-card border border-dark-100 overflow-hidden transition-all duration-300 hover:shadow-card-hover;
+    @apply bg-white rounded-card shadow-card overflow-hidden transition-all duration-300 hover:shadow-card-hover;
   }
   
   .card-interactive {
@@ -105,7 +103,7 @@
   }
   
   .page-title {
-    @apply font-display text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 tracking-tight;
+    @apply font-display text-2xl md:text-3xl lg:text-4xl font-bold text-dark-900 tracking-tight;
   }
   
   .page-subtitle {
@@ -138,7 +136,7 @@
   }
   
   .gradient-text {
-    @apply bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary-500 to-blue-400 bg-clip-text text-transparent;
   }
   
   .glass {
@@ -229,12 +227,12 @@ input[type="number"] {
 }
 
 .modal-content {
-  @apply bg-white rounded-3xl shadow-xl max-w-lg w-full max-h-[90vh] overflow-hidden animate-scale-in;
+  @apply bg-white rounded-[28px] shadow-xl max-w-lg w-full max-h-[90vh] overflow-hidden animate-scale-in;
 }
 
 /* Tab */
 .tab {
-  @apply px-4 py-2.5 text-sm font-medium rounded-xl transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2;
+  @apply px-4 py-2.5 text-sm font-medium rounded-full transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2;
 }
 
 .tab-active {

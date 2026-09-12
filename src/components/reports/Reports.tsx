@@ -22,7 +22,7 @@ const chartTypeOptions = [
 ];
 
 // Simple SVG Chart Components
-function BarChart({ data, maxValue, height = 200, color = '#ed7214' }: { data: Array<{ label: string; value: number }>; maxValue: number; height?: number; color?: string }) {
+function BarChart({ data, maxValue, height = 200, color = '#0071e3' }: { data: Array<{ label: string; value: number }>; maxValue: number; height?: number; color?: string }) {
   const barWidth = 100 / data.length;
   return (
     <div className="w-full h-64 flex items-end justify-around px-2" role="img" aria-label="Bar chart">
@@ -47,7 +47,7 @@ function BarChart({ data, maxValue, height = 200, color = '#ed7214' }: { data: A
   );
 }
 
-function PieChartComponent({ data, colors = ['#ed7214', '#22c55e', '#a855f7', '#f97316', '#ec4899', '#06b6d4', '#84cc16', '#64748b'] }: { data: Array<{ label: string; value: number; color?: string }> }) {
+function PieChartComponent({ data, colors = ['#0071e3', '#22c55e', '#a855f7', '#f97316', '#ec4899', '#06b6d4', '#84cc16', '#64748b'] }: { data: Array<{ label: string; value: number; color?: string }> }) {
   const total = data.reduce((sum, item) => sum + item.value, 0);
   if (total === 0) return <div className="w-full h-64 flex items-center justify-center text-dark-400">Tidak ada data</div>;
   
@@ -94,7 +94,7 @@ function PieChartComponent({ data, colors = ['#ed7214', '#22c55e', '#a855f7', '#
   );
 }
 
-function LineChart({ data, maxValue, height = 200, color = '#ed7214' }: { data: Array<{ label: string; value: number }>; maxValue: number; height?: number; color?: string }) {
+function LineChart({ data, maxValue, height = 200, color = '#0071e3' }: { data: Array<{ label: string; value: number }>; maxValue: number; height?: number; color?: string }) {
   if (data.length === 0) return <div className="w-full h-64 flex items-center justify-center text-dark-400">Tidak ada data</div>;
   
   const points = data.map((item, index) => {
@@ -294,7 +294,7 @@ export function Reports() {
             
             <div className="flex items-center gap-2">
               <span className="text-sm text-dark-500 hidden sm:block">Tipe Chart:</span>
-              <div className="flex bg-dark-100 rounded-xl p-1">
+              <div className="flex bg-black/[0.05] rounded-full p-1">
                 {chartTypeOptions.map(({ value, icon: Icon }) => (
                   <button
                     key={value}
@@ -429,11 +429,11 @@ export function Reports() {
                 <p className="empty-state-title">Tidak ada data</p>
               </div>
             ) : (
-              <div className="divide-y divide-dark-100">
+              <div className="divide-y divide-black/5">
                 {expenseChartData.map((item, index) => {
                   const percentage = totalExpense > 0 ? (item.value / totalExpense) * 100 : 0;
                   return (
-                    <div key={index} className="flex items-center justify-between p-4 hover:bg-dark-50">
+                    <div key={index} className="flex items-center justify-between p-4 hover:bg-black/[0.03]">
                       <div className="flex items-center gap-3">
                         <div className="w-8 h-8 rounded-lg flex items-center justify-center text-lg" style={{ backgroundColor: `${item.color}20` }}>
                           <span style={{ color: item.color }}>●</span>
@@ -463,11 +463,11 @@ export function Reports() {
                 <p className="empty-state-title">Tidak ada data</p>
               </div>
             ) : (
-              <div className="divide-y divide-dark-100">
+              <div className="divide-y divide-black/5">
                 {incomeChartData.map((item, index) => {
                   const percentage = totalIncome > 0 ? (item.value / totalIncome) * 100 : 0;
                   return (
-                    <div key={index} className="flex items-center justify-between p-4 hover:bg-dark-50">
+                    <div key={index} className="flex items-center justify-between p-4 hover:bg-black/[0.03]">
                       <div className="flex items-center gap-3">
                         <div className="w-8 h-8 rounded-lg flex items-center justify-center text-lg" style={{ backgroundColor: `${item.color}20` }}>
                           <span style={{ color: item.color }}>●</span>

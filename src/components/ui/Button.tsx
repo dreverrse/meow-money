@@ -25,13 +25,13 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) => {
-    const baseClasses = 'inline-flex items-center justify-center gap-2 font-medium rounded-xl transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
+    const baseClasses = 'inline-flex items-center justify-center gap-2 font-medium rounded-full transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
     
     const variantClasses = {
-      primary: 'bg-primary-500 text-white hover:bg-primary-600 active:bg-primary-700 focus-visible:ring-primary-500 shadow-soft',
-      secondary: 'bg-white text-dark-700 border border-dark-200 hover:bg-dark-50 active:bg-dark-100 focus-visible:ring-dark-400 shadow-card',
-      ghost: 'bg-transparent text-dark-600 hover:bg-dark-100 active:bg-dark-200 focus-visible:ring-dark-400',
-      danger: 'bg-red-500 text-white hover:bg-red-600 active:bg-red-700 focus-visible:ring-red-500 shadow-soft',
+      primary: 'bg-primary-500 text-white hover:bg-primary-600 active:bg-primary-700 focus-visible:ring-primary-500',
+      secondary: 'bg-black/[0.05] text-dark-900 hover:bg-black/[0.08] active:bg-black/[0.1] focus-visible:ring-dark-400',
+      ghost: 'bg-transparent text-dark-600 hover:bg-black/[0.05] active:bg-black/[0.08] focus-visible:ring-dark-400',
+      danger: 'bg-red-500 text-white hover:bg-red-600 active:bg-red-700 focus-visible:ring-red-500',
     };
     
     const sizeClasses = {

@@ -140,10 +140,10 @@ export const Avatar = forwardRef<HTMLDivElement, AvatarProps>(
         'bg-accent-500',
         'bg-amber-500',
         'bg-blue-500',
-        'bg-purple-500',
+        'bg-blue-600',
         'bg-pink-500',
         'bg-teal-500',
-        'bg-orange-500',
+        'bg-primary-400',
         'bg-indigo-500',
       ];
       let hash = 0;

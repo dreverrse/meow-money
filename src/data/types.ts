@@ -84,7 +84,7 @@ export const DEFAULT_CATEGORIES: Category[] = [
   { id: 'food', name: 'Makanan & Minuman', icon: '🍔', color: '#ef4444', type: 'expense', isDefault: true },
   { id: 'transport', name: 'Transportasi', icon: '🚌', color: '#f97316', type: 'expense', isDefault: true },
   { id: 'shopping', name: 'Belanja', icon: '🛍️', color: '#ec4899', type: 'expense', isDefault: true },
-  { id: 'entertainment', name: 'Hiburan', icon: '🎮', color: '#a855f7', type: 'expense', isDefault: true },
+  { id: 'entertainment', name: 'Hiburan', icon: '🎮', color: '#8b5cf6', type: 'expense', isDefault: true },
   { id: 'health', name: 'Kesehatan', icon: '🏥', color: '#06b6d4', type: 'expense', isDefault: true },
   { id: 'education', name: 'Pendidikan', icon: '📚', color: '#84cc16', type: 'expense', isDefault: true },
   { id: 'bills', name: 'Tagihan & Bayar', icon: '📄', color: '#64748b', type: 'expense', isDefault: true },

@@ -24,7 +24,7 @@ function StatCard({ title, value, change, changeLabel, icon, iconColor, bgColor,
       <div className="flex items-start justify-between">
         <div>
           <p className="text-sm font-medium text-dark-500">{title}</p>
-          <p className="mt-1 font-display text-3xl font-bold text-dark-900">{value}</p>
+          <p className="mt-1 font-display text-3xl font-bold tracking-tight text-dark-900">{value}</p>
           {change !== undefined && (
             <div className="mt-2 flex items-center gap-1">
               {trend === 'up' && <TrendingUp className="w-4 h-4 text-green-500" />}
@@ -37,7 +37,7 @@ function StatCard({ title, value, change, changeLabel, icon, iconColor, bgColor,
             </div>
           )}
         </div>
-        <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${bgColor}`}>
+        <div className={`w-12 h-12 rounded-squircle flex items-center justify-center ${bgColor}`}>
           {icon}
         </div>
       </div>
@@ -163,7 +163,7 @@ function QuickAction({ icon, label, href, color, bgColor }: QuickActionProps) {
       to={href}
       className={`card-interactive p-4 flex flex-col items-center gap-3 text-center ${bgColor} group`}
     >
-      <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${color} group-hover:scale-110 transition-transform`}>
+      <div className={`w-12 h-12 rounded-squircle flex items-center justify-center ${color} group-hover:scale-110 transition-transform`}>
         {icon}
       </div>
       <span className="text-sm font-medium text-dark-700">{label}</span>
@@ -287,11 +287,11 @@ export function RecentTransactions({ limit = 5 }: RecentTransactionsProps) {
         </div>
       </CardHeader>
       <CardContent className="p-0">
-        <div className="divide-y divide-dark-100">
+        <div className="divide-y divide-black/5">
           {recentTransactions.map((transaction, index) => (
             <div
               key={transaction.id}
-              className={`flex items-center gap-4 p-4 hover:bg-dark-50 transition-colors animate-slide-up ${index === recentTransactions.length - 1 ? 'border-b-0' : ''}`}
+              className={`flex items-center gap-4 p-4 hover:bg-black/[0.03] transition-colors animate-slide-up ${index === recentTransactions.length - 1 ? 'border-b-0' : ''}`}
               style={{ animationDelay: `${index * 50}ms` }}
             >
               <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-lg ${transaction.type === 'income' ? 'bg-secondary-100' : 'bg-red-100'}`}>

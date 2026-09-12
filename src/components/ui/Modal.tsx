@@ -107,7 +107,7 @@ export function Modal({
         tabIndex={-1}
       >
         {(title || showCloseButton) && (
-          <div className="flex items-start justify-between p-6 border-b border-dark-100">
+          <div className="flex items-start justify-between p-6 border-b border-black/5">
             <div>
               {title && (
                 <h2 id="modal-title" className="font-display text-xl font-semibold text-dark-900">
@@ -123,7 +123,7 @@ export function Modal({
             {showCloseButton && (
               <button
                 onClick={onClose}
-                className="btn-icon text-dark-400 hover:text-dark-600 focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 rounded-xl p-1.5"
+                className="btn-icon text-dark-400 hover:text-dark-600 focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 rounded-full p-1.5"
                 aria-label="Tutup modal"
               >
                 <X className="w-5 h-5" />

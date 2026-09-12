@@ -417,7 +417,7 @@ interface SavingsGoalCardProps {
 }
 
 function SavingsGoalCard({ goal, onEdit, onDelete, onAddProgress, isCompleted = false }: SavingsGoalCardProps) {
-  const { state, formatCurrency, preferences } = useApp();
+  const { state } = useApp();
   
   const percentage = goal.targetAmount > 0 ? Math.min(100, (goal.currentAmount / goal.targetAmount) * 100) : 0;
   const remaining = goal.targetAmount - goal.currentAmount;
@@ -446,7 +446,7 @@ function SavingsGoalCard({ goal, onEdit, onDelete, onAddProgress, isCompleted = 
           <div className="mt-4 pt-4 border-t border-green-200 flex items-center justify-between">
             <div>
               <p className="text-sm text-dark-500">Total Tersimpan</p>
-              <p className="font-bold text-green-600">{formatCurrency(goal.currentAmount, preferences.currency)}</p>
+              <p className="font-bold text-green-600">{formatCurrency(goal.currentAmount, state.preferences.currency)}</p>
             </div>
             <div className="flex items-center gap-2">
               <Button variant="ghost" size="sm" onClick={() => onEdit(goal)}>
@@ -483,11 +483,11 @@ function SavingsGoalCard({ goal, onEdit, onDelete, onAddProgress, isCompleted = 
         <div className="grid grid-cols-3 gap-4 mb-4 p-4 bg-dark-50 rounded-xl">
           <div className="text-center">
             <p className="text-xs text-dark-500">Tersimpan</p>
-            <p className="font-bold text-dark-900">{formatCurrency(goal.currentAmount, preferences.currency)}</p>
+            <p className="font-bold text-dark-900">{formatCurrency(goal.currentAmount, state.preferences.currency)}</p>
           </div>
           <div className="text-center">
             <p className="text-xs text-dark-500">Sisa</p>
-            <p className="font-bold text-red-600">{formatCurrency(Math.max(0, remaining), preferences.currency)}</p>
+            <p className="font-bold text-red-600">{formatCurrency(Math.max(0, remaining), state.preferences.currency)}</p>
           </div>
           <div className="text-center">
             <p className="text-xs text-dark-500">Hari Tersisa</p>
@@ -499,7 +499,7 @@ function SavingsGoalCard({ goal, onEdit, onDelete, onAddProgress, isCompleted = 
           <div className="mb-4 p-3 bg-primary-50 rounded-xl border border-primary-100">
             <p className="text-sm text-primary-700 flex items-center gap-1">
               <Target className="w-4 h-4" />
-              Target harian: <strong>{formatCurrency(dailyTarget, preferences.currency)}/hari</strong> untuk mencapai tepat waktu
+              Target harian: <strong>{formatCurrency(dailyTarget, state.preferences.currency)}/hari</strong> untuk mencapai tepat waktu
             </p>
           </div>
         )}

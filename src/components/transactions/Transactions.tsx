@@ -2,7 +2,7 @@ import React, { useState, useMemo, useCallback } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import {
   Plus, Filter, ChevronDown, ChevronUp, Search, MoreVertical,
-  Edit, Trash2, Calendar, CreditCard, Wallet, Smartphone, Building2
+  Edit, Trash2, Calendar, CreditCard, Wallet, Smartphone, Building2, TrendingUp
 } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardContent } from '../ui/Card';
 import { Button } from '../ui/Button';

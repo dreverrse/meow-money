@@ -80,16 +80,20 @@ export function Sidebar({ isCollapsed = false, onToggle }: SidebarProps) {
             title={isCollapsed ? item.label : undefined}
             aria-label={item.label}
           >
-            <span className="w-5 h-5 flex-shrink-0" aria-hidden="true">
-              <item.icon className="w-5 h-5" strokeWidth={isActive ? 2.5 : 2} />
-            </span>
-            {!isCollapsed && (
+            {({ isActive }) => (
               <>
-                <span className="truncate">{item.label}</span>
-                {item.badge && (
-                  <span className="ml-auto px-2 py-0.5 text-xs font-medium bg-primary-100 text-primary-700 rounded-full">
-                    {item.badge}
-                  </span>
+                <span className="w-5 h-5 flex-shrink-0" aria-hidden="true">
+                  <item.icon className="w-5 h-5" strokeWidth={isActive ? 2.5 : 2} />
+                </span>
+                {!isCollapsed && (
+                  <>
+                    <span className="truncate">{item.label}</span>
+                    {item.badge && (
+                      <span className="ml-auto px-2 py-0.5 text-xs font-medium bg-primary-100 text-primary-700 rounded-full">
+                        {item.badge}
+                      </span>
+                    )}
+                  </>
                 )}
               </>
             )}

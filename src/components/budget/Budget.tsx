@@ -343,7 +343,7 @@ interface BudgetCardProps {
 }
 
 function BudgetCard({ budget, onEdit, onDelete }: BudgetCardProps) {
-  const { state, formatCurrency, preferences } = useApp();
+  const { state } = useApp();
   
   return (
     <div className="p-4 hover:bg-dark-50 transition-colors">
@@ -356,13 +356,13 @@ function BudgetCard({ budget, onEdit, onDelete }: BudgetCardProps) {
             <p className="font-medium text-dark-900 truncate">{budget.category?.name || budget.categoryId}</p>
             <div className="flex items-center gap-3 mt-1 text-sm text-dark-500">
               <Badge variant="expense" size="sm" dot>{budget.period === 'monthly' ? 'Bulanan' : budget.period === 'weekly' ? 'Mingguan' : 'Tahunan'}</Badge>
-              <span>Anggaran: {formatCurrency(budget.amount, preferences.currency)}</span>
+              <span>Anggaran: {formatCurrency(budget.amount, state.preferences.currency)}</span>
             </div>
           </div>
         </div>
         <div className="text-right flex-shrink-0">
           <p className={`font-semibold ${budget.isOver ? 'text-red-600' : 'text-dark-900'}`}>
-            {formatCurrency(budget.spent, preferences.currency)} / {formatCurrency(budget.amount, preferences.currency)}
+            {formatCurrency(budget.spent, state.preferences.currency)} / {formatCurrency(budget.amount, state.preferences.currency)}
           </p>
           <p className={`text-sm ${budget.isOver ? 'text-red-500' : budget.isNearLimit ? 'text-amber-500' : 'text-dark-500'}`}>
             {budget.percentage.toFixed(0)}% terpakai

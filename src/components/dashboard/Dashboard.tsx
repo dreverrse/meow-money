@@ -240,7 +240,7 @@ interface RecentTransactionsProps {
 }
 
 export function RecentTransactions({ limit = 5 }: RecentTransactionsProps) {
-  const { state, deleteTransaction, formatCurrency, preferences } = useApp();
+  const { state, deleteTransaction } = useApp();
 
   const recentTransactions = useMemo(() => {
     return state.transactions
@@ -299,11 +299,11 @@ export function RecentTransactions({ limit = 5 }: RecentTransactionsProps) {
               </div>
               <div className="flex-1 min-w-0">
                 <p className="font-medium text-dark-900 truncate">{transaction.description || transaction.categoryName}</p>
-                <p className="text-sm text-dark-500">{transaction.categoryName} &#8226; {formatDate(transaction.date, preferences.dateFormat)}</p>
+                <p className="text-sm text-dark-500">{transaction.categoryName} &#8226; {formatDate(transaction.date, state.preferences.dateFormat)}</p>
               </div>
               <div className="text-right">
                 <p className={`font-semibold ${transaction.type === 'income' ? 'text-secondary-600' : 'text-red-600'}`}>
-                  {transaction.type === 'income' ? '+' : '-'}{formatCurrency(transaction.amount, preferences.currency)}
+                  {transaction.type === 'income' ? '+' : '-'}{formatCurrency(transaction.amount, state.preferences.currency)}
                 </p>
                 <Badge variant={transaction.type === 'income' ? 'income' : 'expense'} size="sm">
                   {transaction.type === 'income' ? 'Masuk' : 'Keluar'}

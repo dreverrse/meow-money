@@ -8,7 +8,7 @@ import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '../ui
 import { Button } from '../ui/Button';
 import { Input, Select } from '../ui/Input';
 import { Badge } from '../ui/Badge';
-import { Modal } from '../ui/Modal';
+import { Modal, ConfirmDialog } from '../ui/Modal';
 import { formatCurrency } from '../../utils/formatters';
 import { useApp } from '../../context/AppContext';
 import { Account, CURRENCIES, CurrencyCode, DATE_FORMATS } from '../../data/types';

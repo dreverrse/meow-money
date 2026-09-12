@@ -19,7 +19,7 @@ interface SidebarProps {
   onToggle?: () => void;
 }
 
-const navigation = [
+export const navigation = [
   { label: 'Dashboard', icon: LayoutDashboard, href: '/', badge: null },
   { label: 'Transaksi', icon: ListChecks, href: '/transactions', badge: null },
   { label: 'Kategori', icon: FolderOpen, href: '/categories', badge: null },
@@ -36,9 +36,10 @@ export function Sidebar({ isCollapsed = false, onToggle }: SidebarProps) {
     <aside
       className={`
         fixed lg:static inset-y-0 left-0 z-40 bg-white border-r border-dark-100
+        hidden lg:flex
         transition-all duration-300 ease-in-out
         ${isCollapsed ? 'w-20' : 'w-64'}
-        flex flex-col
+        flex-col
       `}
       aria-label="Navigasi utama"
     >

@@ -1,9 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import { Menu, ChevronDown, Bell, Settings, User, LogOut, Moon, Sun, Monitor } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { Avatar } from '../ui/Badge';
 import { Modal } from '../ui/Modal';
 import { useApp } from '../../context/AppContext';
+import { navigation } from './Sidebar';
 
 export function Header() {
   const { state, updatePreferences } = useApp();
@@ -181,24 +183,26 @@ export function Header() {
             </div>
             
             <nav className="flex-1 p-4 space-y-2 overflow-y-auto">
-              {[
-                { label: 'Dashboard', icon: '📊', href: '#dashboard' },
-                { label: 'Transaksi', icon: '📝', href: '#transactions' },
-                { label: 'Kategori', icon: '📂', href: '#categories' },
-                { label: 'Anggaran', icon: '💰', href: '#budget' },
-                { label: 'Laporan', icon: '📈', href: '#reports' },
-                { label: 'Tabungan', icon: '🐷', href: '#savings' },
-                { label: 'Pengaturan', icon: '⚙️', href: '#settings' },
-              ].map((item) => (
-                <a
+              {navigation.map((item) => (
+                <NavLink
                   key={item.label}
-                  href={item.href}
+                  to={item.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-dark-600 hover:bg-dark-50 hover:text-dark-900 transition-colors text-base"
+                  className={({ isActive }) => `
+                    flex items-center gap-3 px-4 py-3 rounded-xl transition-colors text-base
+                    ${isActive
+                      ? 'bg-primary-50 text-primary-700'
+                      : 'text-dark-600 hover:bg-dark-50 hover:text-dark-900'
+                    }
+                  `}
                 >
-                  <span className="text-xl">{item.icon}</span>
-                  {item.label}
-                </a>
+                  {({ isActive }) => (
+                    <>
+                      <item.icon className="w-5 h-5" strokeWidth={isActive ? 2.5 : 2} />
+                      {item.label}
+                    </>
+                  )}
+                </NavLink>
               ))}
             </nav>
             
